@@ -1,8 +1,11 @@
 #include "main.h"
 
-/** main - Check description
- * Description: program that prints the word _putchar, followed by a new line.
- * Return: always 0.
+/**
+ * main - Check description
+ *
+ * Description: 'program that print word _putchar, followed by new line.'
+ *
+ * Return: int(Success).
  */
 int main(void)
 {
