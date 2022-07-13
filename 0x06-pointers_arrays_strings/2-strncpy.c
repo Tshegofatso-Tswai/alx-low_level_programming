@@ -21,12 +21,16 @@ char *_strncpy(char *dest, char *src, int n)
 	srclen++;
 
 	if (n > srclen)
+	{
 		n = srclen;
+	}
 
 	src = start;
 
 	for (; i < n; i++)
+	{
 		*dest++ = *src++;
+	}
 
 	return (temp);
 }
