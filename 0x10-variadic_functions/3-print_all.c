@@ -77,4 +77,4 @@ while (format && format[i])
 		}
 		j++;
 	}
-
+}
