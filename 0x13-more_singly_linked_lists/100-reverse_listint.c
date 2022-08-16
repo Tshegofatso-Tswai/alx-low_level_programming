@@ -1,11 +1,25 @@
-#include <stdio.h>
+#include "lists.h"
 
 /**
- * premain - run before main
+ * reverse_listint - reverses a linked list
+ * @head: pointer to the first node in the list
+ *
+ * Return: pointer to the first node in the new list
  */
-void __attribute__ ((constructor)) premain()
+listint_t *reverse_listint(listint_t **head)
 {
-printf(
-"You're beat! and yet, you must allow,\nI bore my house upon my back!\n"
-);
+    listint_t *prev = NULL;
+    listint_t *next = NULL;
+
+    while (*head)
+    {
+        next = (*head)->next;
+        (*head)->next = prev;
+        prev = *head;
+        *head = next;
+    }
+
+    *head = prev;
+
+    return (*head);
 }
