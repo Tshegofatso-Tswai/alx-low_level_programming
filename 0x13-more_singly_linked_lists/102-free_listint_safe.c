@@ -1,10 +1,10 @@
 #include "lists.h"
 
 /**
- * free_listint_safe - Free the list and put NULL in the head
+ * free_listint_safe - Free the list and put the NULL in the head
  * @h: Head of the list
  *
- * Return: the size of the list that was free’d
+ * Return: size of the list that was free’d
  */
 size_t free_listint_safe(listint_t **h)
 {
