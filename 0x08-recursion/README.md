@@ -1,0 +1,1 @@
+In this project, I focused on learning and implementing recursion in a bash environment. I got a solid understanding of recursion, its implementation, and the scenarios where it is suitable or unsuitable.
