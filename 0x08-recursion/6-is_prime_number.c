@@ -10,10 +10,10 @@ int is_prime_helper(int n, int div);
  */
 int is_prime_number(int n)
 {
-    if (n <= 1)
-        return (0);
+	if (n <= 1)
+	return (0);
 
-    return (is_prime_helper(n, 2));
+	return (is_prime_helper(n, 2));
 }
 
 /**
@@ -25,11 +25,11 @@ int is_prime_number(int n)
  */
 int is_prime_helper(int n, int div)
 {
-    if (n % div == 0)
-        return (0);
-    else if (div * div > n)
-        return (1);
-    else
-        return (is_prime_helper(n, div + 1));
+	if (n % div == 0)
+		return (0);
+	else if (div * div > n)
+		return (1);
+	else
+		return (is_prime_helper(n, div + 1));
 }
 
