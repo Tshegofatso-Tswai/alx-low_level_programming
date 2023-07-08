@@ -3,10 +3,10 @@
 int check_palindrome(char *s, int start, int end);
 
 /**
- * is_palindrome - checks if a string is a palindrome.
- * @s: string to be checked
+ * is_palindrome - Checks if a string is a palindrome.
+ * @s: String to be checked
  *
- * Return: 1 if palindrome, 0 otherwise.
+ * Return: 1 if palindrome, 0 otherwise
  */
 int is_palindrome(char *s)
 {
@@ -19,20 +19,21 @@ int is_palindrome(char *s)
 }
 
 /**
- * check_palindrome - helper function to recursively check if a string is a palindrome.
- * @s: string to be checked
- * @start: starting index
- * @end: ending index
+ * check_palindrome - Helper function to recursively check if a string is a palindrome.
+ * @s: String to be checked
+ * @start: Starting index
+ * @end: Ending index
  *
- * Return: 1 if palindrome, 0 otherwise.
+ * Return: 1 if palindrome, 0 otherwise
  */
 int check_palindrome(char *s, int start, int end)
 {
 	if (start >= end)
 		return (1);
+
 	if (s[start] != s[end])
 		return (0);
 
-		return (check_palindrome(s, start + 1, end - 1));
+	return (check_palindrome(s, start + 1, end - 1));
 }
 
