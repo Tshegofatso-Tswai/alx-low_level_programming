@@ -1,1 +1,1 @@
-This project includes source code files, a static library, and a main program showcasing all the function's usage.
+In this project I focused on static libraries in C programming. I created static libraries using the ar command, understood the purpose and usage of static libraries, and linking them with C programs using the gcc compiler. I covered topics like creating, using, and managing static libraries to organize and reuse code in C projects.
