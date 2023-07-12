@@ -1,1 +1,1 @@
-Done
+I covered concepts such as accessing command-line arguments using argc and argv, understanding the purpose and indexing of these arrays, and handling various scenarios like parsing arguments and printing their values.
