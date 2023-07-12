@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /* Function prototypes */
 char *create_array(unsigned int size, char c);
