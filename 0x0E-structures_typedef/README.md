@@ -1,0 +1,1 @@
+Contains C programs that demonstrate the usage of structures and typedef in C programming. The programs in this directory provide examples of defining and working with structures, as well as using typedef to create more intuitive and readable code.
