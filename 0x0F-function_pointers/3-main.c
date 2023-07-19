@@ -1,18 +1,19 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include "3-calc.h"
-
 /**
- * main - Entry point. Performs simple operations.
- * @argc: Number of arguments
- * @argv: Array of string arguments
+ * main - main
+ * @argc: arg count
+ * @argv: arg array
  *
- * Return: Always 0 (Success)
- */
-int main(int argc, char *argv[])
+ * Return: int
+ *
+ **/
+int main(int argc, char **argv)
 {
-	int num1, num2, result;
-	int (*op_func)(int, int);
+	int inta, intb;
+	int (*f)(int, int);
 
 	if (argc != 4)
 	{
@@ -20,26 +21,26 @@ int main(int argc, char *argv[])
 		return (98);
 	}
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[3]);
+	f = get_op_func(argv[2]);
 
-	op_func = get_op_func(argv[2]);
-
-	if (!op_func)
+	if (f == NULL)
 	{
 		printf("Error\n");
 		return (99);
 	}
 
-	if ((*argv[2] == '/' || *argv[2] == '%') && num2 == 0)
+	if ((argv[2][0] != '+' && argv[2][0] != '-' && argv[2][0] != '/' &&
+	      argv[2][0] != '*' && argv[2][0] != '%') || strlen(argv[2]) != 1)
 	{
 		printf("Error\n");
-		return (100);
+		exit(99);
 	}
 
-	result = op_func(num1, num2);
-	printf("%d\n", result);
+		inta = atoi(argv[1]);
+		intb = atoi(argv[3]);
 
-	return (0);
+		printf("%d\n", f(inta, intb));
+
+		return (0);
+
 }
-
