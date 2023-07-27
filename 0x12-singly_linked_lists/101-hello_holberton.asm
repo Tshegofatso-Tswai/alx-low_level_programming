@@ -6,8 +6,8 @@ section .data
 section .text
     extern printf
 
-global _start
-_start:
+global main
+main:
     ; Push the format string onto the stack (argument for printf)
     mov rdi, format
     ; Push the address of hello onto the stack (argument for printf)
