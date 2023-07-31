@@ -1,42 +1,73 @@
 #include "lists.h"
 
 /**
- * free_listint_safe - frees a linked list.
- * @h: Pointer to the head of the list.
+ * free_listp2 - frees a linked list
+ * @head: head of a list.
  *
- * Return: The size of the list that was freed.
+ * Return: no return.
+ */
+void free_listp2(listp_t **head)
+{
+	listp_t *temp;
+	listp_t *curr;
+
+	if (head != NULL)
+	{
+		curr = *head;
+		while ((temp = curr) != NULL)
+		{
+			curr = curr->next;
+			free(temp);
+		}
+		*head = NULL;
+	}
+}
+
+/**
+ * free_listint_safe - frees a linked list.
+ * @h: head of a list.
+ *
+ * Return: size of the list that was freed.
  */
 size_t free_listint_safe(listint_t **h)
 {
 	size_t nnodes = 0;
-	listint_t *current, *next;
+	listp_t *hptr, *new, *add;
+	listint_t *curr;
 
+	hptr = NULL;
 	while (*h != NULL)
 	{
-		current = *h;
-		next = current->next;
+		new = malloc(sizeof(listp_t));
 
-		/* Check if the current node has been visited before */
-		if (current <= next)
+		if (new == NULL)
+			exit(98);
+
+		new->p = (void *)*h;
+		new->next = hptr;
+		hptr = new;
+
+		add = hptr;
+
+		while (add->next != NULL)
 		{
-			*h = NULL; /* Set the head to NULL to prevent further access */
-
-			/* Free all the remaining nodes */
-			while (current != NULL)
+			add = add->next;
+			if (*h == add->p)
 			{
-				next = current->next;
-				free(current);
-				nnodes++;
-				current = next;
+				*h = NULL;
+				free_listp2(&hptr);
+				return (nnodes);
 			}
-			return (nnodes);
 		}
 
-		/* Move to the next node */
-		*h = next;
+		curr = *h;
+		*h = (*h)->next;
+		free(curr);
 		nnodes++;
 	}
 
+	*h = NULL;
+	free_listp2(&hptr);
 	return (nnodes);
 }
 
