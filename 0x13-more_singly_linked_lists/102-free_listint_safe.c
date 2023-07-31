@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * free_listint_safe - Frees a listint_t linked list safely.
+ * free_listint_safe - frees a linked list.
  * @h: Pointer to the head of the list.
  *
  * Return: The size of the list that was freed.
@@ -9,38 +9,34 @@
 size_t free_listint_safe(listint_t **h)
 {
 	size_t nnodes = 0;
-	listp_t *hptr, *new, *add;
-
-	hptr = NULL;
+	listint_t *current, *next;
 
 	while (*h != NULL)
 	{
-		new = malloc(sizeof(listp_t));
-		if (new == NULL)
-			exit(98);
+		current = *h;
+		next = current->next;
 
-		new->p = (void *)*h;
-		new->next = hptr;
-		hptr = new;
-
-		add = hptr;
-		while (add->next != NULL)
+		/* Check if the current node has been visited before */
+		if (current <= next)
 		{
-			add = add->next;
-			if (*h == add->p)
+			*h = NULL; /* Set the head to NULL to prevent further access */
+
+			/* Free all the remaining nodes */
+			while (current != NULL)
 			{
-				*h = NULL;
-				free_listp(&hptr);
-				return (nnodes);
+				next = current->next;
+				free(current);
+				nnodes++;
+				current = next;
 			}
+			return (nnodes);
 		}
 
-		*h = (*h)->next;
+		/* Move to the next node */
+		*h = next;
 		nnodes++;
 	}
 
-	*h = NULL;
-	free_listp(&hptr);
 	return (nnodes);
 }
 
