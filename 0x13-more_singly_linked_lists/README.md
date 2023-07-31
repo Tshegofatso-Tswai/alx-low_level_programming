@@ -1,0 +1,1 @@
+This directory contains C programs that demonstrate advanced operations on singly linked lists. It includes functions for adding, deleting, and manipulating nodes in a linked list dynamically. The programs utilize memory allocation and pointer manipulation to efficiently manage linked list data structures.
