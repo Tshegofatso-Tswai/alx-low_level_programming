@@ -1,0 +1,1 @@
+This directory contains C programs and code examples related to bit manipulation in the C programming language. The programs demonstrate various techniques for working with bits, including setting, clearing, toggling, and checking specific bits within integers.
