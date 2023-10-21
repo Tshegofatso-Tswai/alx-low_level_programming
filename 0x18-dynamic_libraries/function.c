@@ -39,7 +39,7 @@ int mul(int a, int b)
  * @b: second int
  * Return: result of the division of the numbers
  */
-int my_div(int a, int b)
+int _div(int a, int b)
 {
 	return (a / b);
 }
