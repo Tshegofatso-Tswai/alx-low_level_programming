@@ -1,0 +1,1 @@
+In this directory we explore the concept of hash tables in the C programming language. This directory contains C programs that demonstrate the creation, usage, and management of hash tables, providing a practical understanding of this fundamental data structure in software development.
