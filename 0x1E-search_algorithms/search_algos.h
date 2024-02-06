@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <stddef.h>
 
 #define __local __attribute__((weak))
 
@@ -29,5 +30,29 @@ __local void print_array(int *array, int start, int stop)
 
 	printf("%d\n", array[i]);
 }
+
+/**
+ * struct listint_s - singly linked list
+ *
+ * @n: Integer
+ * @index: Index of the node in the list
+ * @next: Pointer to the next node
+ *
+ * Description: singly linked list node structure
+ */
+typedef struct listint_s
+{
+    int n;
+    size_t index;
+    struct listint_s *next;
+} listint_t;
+
+/* Function prototypes for your search algorithms */
+listint_t *jump_list(listint_t *list, size_t size, int value);
+
+/* Function prototypes for list operations */
+listint_t *create_list(int *array, size_t size);
+void print_list(const listint_t *list);
+void free_list(listint_t *list);
 
 #endif
